@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
+//CSS
+import './index.css';
 
 const Main = () => {
   return <>
