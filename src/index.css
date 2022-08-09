@@ -34,41 +34,74 @@ body {
   left: 33vw;
 }
 .task {
+  /* overflow-y: visible; */
+  /* overflow-wrap: break-word; */
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
   height: 3rem;
   width: 30rem;
   margin: 20px 0;
   padding-left: 10px;
-  padding-top: 12px;
+  padding-top: 0px;
   background-color: var(--primary-color);
   border: none;
   transition: background-color 200ms ease-in-out;
 }
+#input-task {
+  width: 355px;
+  overflow: hidden;
+  /* overflow-wrap: break-word; */
+  margin-left: -2.5rem;
+  font-size: .8rem;
+
+}
 .task:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   background-color: var(--primary-color-highlight);
+}
+.e-d-icons {
+  position: relative;
+  left: 20px;
+  top: 12px;
+}
+#tick-icon {
+  position: relative;
+  top: 12px;
+  color: green;
+}
+#edit-icon {
+  margin-right: 5px;
+  color: rebeccapurple;
+}
+#delete-icon {
+  margin-left: 0px;
+  color: red;
+}
+#input-task::first-letter {
+  text-transform: capitalize;
+  font-size: xx-large;
+}
+.icon-hover:hover {
+  cursor: pointer;
 }
 .btn {
   width: 6rem;
-  height: 2.5rem;
+  height: 2.2rem;
   margin-left: 5px;
 
   background-color: var(--button-bg-color);
   color: aliceblue;
   font-weight: bold;
   border: none;
-  /* border-radius: var(--radius); */
 }
 .btn:hover {
   cursor: pointer;
+  filter: brightness(1.27);
 }
 #input {
   width: 12rem;
-  height: 2.5rem;
+  height: 2.2rem;
   padding-left: 5px;
   font-weight: bold;
-  border: none;
-  /* border-radius: var(--radius); */
-}
-#input:active {
   border: none;
 }

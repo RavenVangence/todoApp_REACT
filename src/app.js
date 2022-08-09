@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import {FiEdit} from 'react-icons/fi'
+import {AiOutlineDelete} from 'react-icons/ai'
+import {TiTickOutline} from 'react-icons/ti'
+import { IconContext } from 'react-icons/lib'
 
 const App = () => {
     const [modal, setModal] = useState(false);
@@ -38,7 +42,14 @@ const App = () => {
         {tasks.map(task => {
             const {id, input} = task;
             return <div className="task" key={id}>
-                <h3>{input}</h3>
+                <IconContext.Provider value={{size: '1.5rem'}}>
+                <TiTickOutline id='tick-icon' className='icon-hover'/>
+                <h3 id='input-task'>{input}</h3>
+                <div className='e-d-icons'>
+                <FiEdit id='edit-icon' className='icon-hover'/>
+                <AiOutlineDelete id='delete-icon' className='icon-hover'/>
+                </div>
+                </IconContext.Provider>
             </div>
         })}
         </div>
