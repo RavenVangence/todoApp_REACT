@@ -47,6 +47,10 @@ body {
   border: none;
   transition: background-color 200ms ease-in-out;
 }
+.task-completed {
+  color: grey;
+  text-decoration:line-through;
+}
 #input-task {
   width: 355px;
   overflow: hidden;
