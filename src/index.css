@@ -16,31 +16,131 @@ body {
   font-family: var(--font-family-manrope);
 }
 
+
+@media screen and (max-width: 480px) {
+  .form { 
+    position: relative;
+    width: 206px;
+    margin: auto;
+    top: 4rem;
+  }
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn {
+  width: 12rem;
+  margin-top: 10px;
+  height: 2.2rem;
+
+  background-color: var(--button-bg-color);
+  color: aliceblue;
+  font-weight: bold;
+  border: none;
+}
+.btn-edit {
+  margin: 0 0 1rem 0; 
+  border-radius: 5px;
+}
+#input {
+  width: 12rem;
+  height: 2.2rem;
+  padding-left: 5px;
+  font-weight: bold;
+  border: none;
+}
 .modal {
   position: absolute;
-  left: 45%;
-}
-.modal-invalid {
-  position: absolute;
-  left: 45%;
-  color: rgb(244, 19, 19);
+  width: 100%;
+  text-align: center;
 }
 
-.form {
+.task-container {
+  position: relative;
+  width: 90%;
+  top: 7rem;
+  margin: auto;
+}
+.task {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 3rem;
+  width: 100%;
+  margin: 20px 0;
+  padding-left: 10px;
+  background-color: var(--primary-color);
+  border: none;
+  transition: background-color 200ms ease-in-out;
+}
+.task-completed {
+  color: grey;
+  text-decoration:line-through;
+}
+#input-task {
+  width: 255px;
+  overflow: hidden;
+  margin-left: -2rem;
+  padding-top: 10px;
+  font-size: .8rem;
+}
+#input-task::first-letter {
+  text-transform: capitalize;
+  font-size: xx-large;
+}
+.task:hover {
+  background-color: var(--primary-color-highlight);
+}
+.e-d-icons {
+  position: relative;
+  margin: auto 0;
+}
+#tick-icon {
+  position: relative;
+  margin: auto 0;
+  color: green;
+}
+#edit-icon {
+  margin-right: 5px;
+  color: rebeccapurple;
+}
+#delete-icon {
+  color: red;
+}
+}
+
+/* #############################
+
+########################################################
+
+                 MOBILE TABLETS
+
+########################################################
+
+################################ */
+
+
+@media screen and (min-width: 481px) and (max-width:768px) {
+
+.modal {
   position: absolute;
-  top: 3rem;
-  left: 40vw;
-  margin: 1rem auto; 
+  width: 100%;
+  text-align: center;
+}
+.form {
+  position: relative;
+  top: 5rem;
+  width: 293px;
+  margin: 0 auto;
 }
 .task-container {
   position: relative;
   width: 30rem;
   top: 9.5rem;
-  left: 33vw;
+  margin: 0 auto;
 }
 .task {
-  /* overflow-y: visible; */
-  /* overflow-wrap: break-word; */
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   height: 3rem;
@@ -59,13 +159,12 @@ body {
 #input-task {
   width: 355px;
   overflow: hidden;
-  /* overflow-wrap: break-word; */
   margin-left: -2.5rem;
+  padding-top: 10px;
   font-size: .8rem;
 
 }
 .task:hover {
-  /* cursor: pointer; */
   background-color: var(--primary-color-highlight);
 }
 .e-d-icons {
@@ -91,6 +190,26 @@ body {
   font-size: xx-large;
 }
 .icon-hover:hover {
+  cursor: pointer;
+}
+
+
+
+.edit-modal-menu-container {
+  position: relative;
+  top: 7.5rem;
+  width: 25rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ccc;
+}
+#cross-icon {
+  position: relative;
+  left: 8.5rem;
+  top: 2.5rem;
   cursor: pointer;
 }
 .btn {
@@ -126,19 +245,279 @@ body {
   font-weight: bold;
   border: none;
 }
-.edit-modal-menu-container {
+}
+
+
+/* #############################
+
+########################################################
+
+                 MOBILE TABLETS AND SMALL LAPTOPS
+
+########################################################
+
+################################ */
+
+
+@media screen and (min-width: 769px) and (max-width:1024px) {
+
+.modal {
   position: absolute;
-  margin: 10vw 36.5vw;
+  width: 100%;
+  text-align: center;
+}
+.form {
+  position: relative;
+  top: 5rem;
+  width: 293px;
+  margin: 0 auto;
+}
+.task-container {
+  position: relative;
+  width: 30rem;
+  top: 9.5rem;
+  margin: 0 auto;
+}
+.task {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 3rem;
+  width: 30rem;
+  margin: 20px 0;
+  padding-left: 10px;
+  padding-top: 0px;
+  background-color: var(--primary-color);
+  border: none;
+  transition: background-color 200ms ease-in-out;
+}
+.task-completed {
+  color: grey;
+  text-decoration:line-through;
+}
+#input-task {
+  width: 355px;
+  overflow: hidden;
+  margin-left: -2.5rem;
+  padding-top: 10px;
+  font-size: .8rem;
+
+}
+.task:hover {
+  background-color: var(--primary-color-highlight);
+}
+.e-d-icons {
+  position: relative;
+  left: 20px;
+  top: 12px;
+}
+#tick-icon {
+  position: relative;
+  top: 12px;
+  color: green;
+}
+#edit-icon {
+  margin-right: 5px;
+  color: rebeccapurple;
+}
+#delete-icon {
+  margin-left: 0px;
+  color: red;
+}
+#input-task::first-letter {
+  text-transform: capitalize;
+  font-size: xx-large;
+}
+.icon-hover:hover {
+  cursor: pointer;
+}
+
+
+
+.edit-modal-menu-container {
+  position: relative;
+  top: 7.5rem;
+  width: 25rem;
+  margin: 0 auto;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #ccc;
-  width: 20rem;
 }
 #cross-icon {
   position: relative;
   left: 8.5rem;
   top: 2.5rem;
   cursor: pointer;
+}
+.btn {
+  width: 6rem;
+  height: 2.2rem;
+  margin-left: 5px;
+
+  background-color: var(--button-bg-color);
+  color: aliceblue;
+  font-weight: bold;
+  border: none;
+}
+.btn-edit {
+  margin: 0 0 1rem 0; 
+  border-radius: 5px;
+}
+.btn:hover {
+  cursor: pointer;
+  filter: brightness(1.27);
+}
+#input {
+  width: 12rem;
+  height: 2.2rem;
+  padding-left: 5px;
+  font-weight: bold;
+  border: none;
+}
+#input-edit {
+  width: 12rem;
+  height: 2.2rem;
+  padding-left: 5px;
+  margin: 1rem 0;
+  font-weight: bold;
+  border: none;
+}
+}
+
+
+/* #############################
+
+########################################################
+
+                 DESTOP & LAPTOP
+
+########################################################
+
+################################ */
+
+@media screen and (min-width: 1025px){
+
+.modal {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+.form {
+  position: relative;
+  top: 5rem;
+  width: 293px;
+  margin: 0 auto;
+}
+.task-container {
+  position: relative;
+  width: 30rem;
+  top: 9.5rem;
+  margin: 0 auto;
+}
+.task {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 3rem;
+  width: 30rem;
+  margin: 20px 0;
+  padding-left: 10px;
+  padding-top: 0px;
+  background-color: var(--primary-color);
+  border: none;
+  transition: background-color 200ms ease-in-out;
+}
+.task-completed {
+  color: grey;
+  text-decoration:line-through;
+}
+#input-task {
+  width: 355px;
+  overflow: hidden;
+  margin-left: -2.5rem;
+  padding-top: 10px;
+  font-size: .8rem;
+
+}
+.task:hover {
+  background-color: var(--primary-color-highlight);
+}
+.e-d-icons {
+  position: relative;
+  left: 20px;
+  top: 12px;
+}
+#tick-icon {
+  position: relative;
+  top: 12px;
+  color: green;
+}
+#edit-icon {
+  margin-right: 5px;
+  color: rebeccapurple;
+}
+#delete-icon {
+  margin-left: 0px;
+  color: red;
+}
+#input-task::first-letter {
+  text-transform: capitalize;
+  font-size: xx-large;
+}
+.icon-hover:hover {
+  cursor: pointer;
+}
+
+
+
+.edit-modal-menu-container {
+  position: relative;
+  top: 7.5rem;
+  width: 25rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ccc;
+}
+#cross-icon {
+  position: relative;
+  left: 8.5rem;
+  top: 2.5rem;
+  cursor: pointer;
+}
+.btn {
+  width: 6rem;
+  height: 2.2rem;
+  margin-left: 5px;
+
+  background-color: var(--button-bg-color);
+  color: aliceblue;
+  font-weight: bold;
+  border: none;
+}
+.btn-edit {
+  margin: 0 0 1rem 0; 
+  border-radius: 5px;
+}
+.btn:hover {
+  cursor: pointer;
+  filter: brightness(1.27);
+}
+#input {
+  width: 12rem;
+  height: 2.2rem;
+  padding-left: 5px;
+  font-weight: bold;
+  border: none;
+}
+#input-edit {
+  width: 12rem;
+  height: 2.2rem;
+  padding-left: 5px;
+  margin: 1rem 0;
+  font-weight: bold;
+  border: none;
+}
 }

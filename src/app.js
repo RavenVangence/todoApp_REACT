@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {FiEdit} from 'react-icons/fi'
 import {AiOutlineDelete} from 'react-icons/ai'
 import {TiTickOutline} from 'react-icons/ti'
@@ -14,6 +14,18 @@ const App = () => {
     const [modalHandler, setModalHandler] = useState('')
     const [input, setInput] = useState('');
     const [tasks, setTasks] = useState([]);
+    const firstInputFocus = useRef(null);
+    const secondInputFocus = useRef(null)
+   
+
+    useEffect(()=> {
+        if(!isUserEditing) {
+            firstInputFocus.current.focus();
+        }
+        if(isUserEditing) {
+            secondInputFocus.current.focus();
+        }
+    })
 
     const handleComplete = (id) => {
         setTasks(tasks.map((task) => {
@@ -116,7 +128,8 @@ const App = () => {
                 <input 
                     id='input' 
                     type="text" 
-                    value={input} 
+                    value={input}
+                    ref={firstInputFocus}
                     placeholder='write task here...' 
                     onChange={e => setInput(e.target.value)}
                 />
@@ -165,6 +178,7 @@ const App = () => {
                 type="text" 
                 placeholder='Edit here...' 
                 id='input-edit'
+                ref={secondInputFocus}
                 value={editValue} 
                 onChange={(e)=>setEditValue(e.target.value)}
             />
